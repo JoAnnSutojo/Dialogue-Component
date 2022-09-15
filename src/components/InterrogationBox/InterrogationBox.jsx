@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { dialogues } from '../../dialoguesData.js';
 import './InterrogationBox.css';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
+
+// Images
+import Laurence from '../../resources/images/laurence2.png';
+import Harry from '../../resources/images/harry.png';
+import Buffy from '../../resources/images/buffy.png';
+import Piotr from  '../../resources/images/piotr1.png';
+import Iris from '../../resources/images/iris.png';
 
 // Speech Bubble
 const Bubble = styled.div`
-    
-    /* position: relative; */
     display: inline-block;
     position: absolute;
     margin: 0 auto;
@@ -63,43 +66,29 @@ const Bubble = styled.div`
             position: relative;
 
             &.left {
-                margin: 10px 10px 60px 10px;
+                margin: 5px 10px 60px 10px;
                 top: auto;
                 left: auto; 
             }
 
             &.right {
-                margin: 10px 10px 60px 10px;
+                margin: 5px 10px 60px 10px;
                 bottom: auto;
                 right: auto;
         } 
 
     }
 `
-// Bubble Arrow Button - Desktop 
-const ArrowBtn = styled.button`
-    width: 20px;
-    height: 24px;
-    background: transparent;
-    border: 0;
-    position: absolute;
-    bottom: -30px;
-    cursor: pointer;
-    &.left {
-        right: 0;
-    }
-    &.right {
-        left: 0
-    }
-`
 
 function InterrogationBox() {
-    const [dialogueId, setDialogueId] = useState(0); 
+    const [dialogueId, setDialogueId] = useState(); 
+    // const [imgLeftFrame, setimgLeftFrame] = useState('');
+    // const [imgRightFrame, setImgRightFrame] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0); 
     const [textArray, setTextArray] = useState([]); 
     const [isInterrogating, setIsInterrogating] = useState(false);
 
-    const showMobileDialogue = function(dialogueId) {
+    const showDialogue = function(dialogueId) {
         // change button text
         setIsInterrogating(true);
         // get the right dialogue from data
@@ -134,12 +123,12 @@ function InterrogationBox() {
                 <div class="top-bar-content">INTERROGATION</div>
             </div>
             <section className='main-frames-conta'>
-                <button onClick={() => showMobileDialogue(2)} className='start-btn'>
-                    {isInterrogating ? 'Tap to Continue' : 'Start'}
+                <button onClick={() => showDialogue(1)} className='start-btn'>
+                    {isInterrogating ? 'Tap to Continue' : 'Start Conversation'}
                 </button>
                 <div className='frames-conta'>
-                    <div className='leftFrame'></div>
-                    <div className='rightFrame'></div>
+                    <div className='leftFrame' style={{backgroundImage: `url(${Laurence})`}}></div>
+                    <div className='rightFrame' style={{backgroundImage: `url(${Piotr})`}}></div>
                     <div className='bubbles-conta'>
                         {
                             textArray.map((e, i) => {
@@ -155,4 +144,5 @@ function InterrogationBox() {
         </main>
     );
 }
+
 export default InterrogationBox;

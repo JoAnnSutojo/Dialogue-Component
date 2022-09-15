@@ -34,17 +34,22 @@ main {
   display: flex;
   align-items: center;
   position: relative;
+  background-image: url("../../resources/images/dark_room_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .main-frames-conta .start-btn {
   position: absolute;
-  top: 3%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 150px;
+  width: 200px;
   padding: 10px 12px;
   border-radius: 5px;
   background-color: black;
-  color: rgb(255, 255, 255);
+  color: rgb(169, 165, 165);
+  outline: 2.5px solid rgb(169, 165, 165);
   font-size: 16px;
   font-weight: bold;
   border: 0;
@@ -67,7 +72,6 @@ main {
   margin-left: 1.5rem;
   width: 50vw;
   height: 40vh;
-  background-image: url("../../resources/images/iris.png");
   background-repeat: no-repeat;
   background-size: 400px;
   background-position: top center;
@@ -89,7 +93,7 @@ main {
 
 @media all and (min-width: 568px) {
   .main-frames-conta .start-btn {
-    top: 2%;
+    top: 10px;
   }
   .main-frames-conta .frames-conta {
     justify-content: center;
@@ -101,12 +105,12 @@ main {
   .main-frames-conta .frames-conta .leftFrame {
     margin-left: 2rem;
     max-width: 350px;
-    height: 75vh;
+    height: 80vh;
   }
   .main-frames-conta .frames-conta .rightFrame {
     margin-top: 0%;
     margin-right: 2rem;
     max-width: 350px;
-    height: 75vh;
+    height: 80vh;
   }
 }/*# sourceMappingURL=InterrogationBox.css.map */
